@@ -43,14 +43,18 @@ void setup()
 void loop()
 {
     u8 value=0;
-    sensor.get_touch_botton_value(&value);
-    Serial.print("botton value is");
+    sensor.get_touch_button_value(&value);
+    Serial.print("button value is");
     Serial.println(value,HEX);
+    if(value&0x01)
+        Serial.println("button 1 is pressed");
+    if(value&0x2)
+        Serial.println("button 2 is pressed");
 
     sensor.get_touch_slider_value(&value);
     Serial.print("slider value is");
     Serial.println(value,HEX);
-
+    Serial.println(" ");
 
 
     delay(1000);
