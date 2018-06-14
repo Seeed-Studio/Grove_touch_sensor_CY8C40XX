@@ -48,12 +48,12 @@ void CY8C::init()
 
 
 /**The target touch sensor has only two registers.
- * addr 0x00:botton value,bit0~bit1 indicate botton0~botton1 status,when the botton is pressed,the corresponding light will turn on,otherwise off.
+ * addr 0x00:button value,bit0~bit1 indicate button0~button1 status,when the button is pressed,the corresponding light will turn on,otherwise off.
  * addr 0x01:slider value,range of 0~100,when the slider has been pressed,user can read slider value,the corresponding light will turn on,otherwise off 
  * */
-s32 CY8C::get_touch_botton_value(u8* touch_value)
+s32 CY8C::get_touch_button_value(u8* touch_value)
 {
-    IIC_read_byte(TOUCH_BOTTON_VALUE_REG_ADDR,touch_value);
+    IIC_read_byte(TOUCH_BUTTON_VALUE_REG_ADDR,touch_value);
     return 0;
 }
 

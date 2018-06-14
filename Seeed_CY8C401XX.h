@@ -44,7 +44,7 @@ typedef unsigned short u16;
 /*default iic addr is 0x08*/
 #define DEFAULT_IIC_ADDR  0x08
 
-#define TOUCH_BOTTON_VALUE_REG_ADDR  0X00
+#define TOUCH_BUTTON_VALUE_REG_ADDR  0X00
 #define TOUCH_SLIDER_VALUE_REG_ADDR  0X01
 
 
@@ -66,7 +66,7 @@ class CY8C:public IIC_OPRTS
     public:
         CY8C(u8 addr=DEFAULT_IIC_ADDR);
         void init();
-        s32 get_touch_botton_value(u8* touch_value);
+        s32 get_touch_button_value(u8* touch_value);
         s32 get_touch_slider_value(u8* value);
     private:
         u8 _IIC_ADDR;
