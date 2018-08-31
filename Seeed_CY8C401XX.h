@@ -1,6 +1,6 @@
 /*
  * Seeed_CY8C401XX.h
- * Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
+ * Driver for Grove touch sensor CY8C401XX
  *  
  * Copyright (c) 2018 Seeed Technology Co., Ltd.
  * Website    : www.seeed.cc
@@ -53,7 +53,7 @@ class IIC_OPRTS
     public:
         void IIC_begin(){Wire.begin();}
         s32 IIC_write_byte(u8 reg,u8 byte);
-        void IIC_read_byte(u8 reg,u8* byte);
+        s32 IIC_read_byte(u8 reg,u8* byte);
         void set_iic_addr(u8 IIC_ADDR);
         void IIC_read_16bit(u8 start_reg,u16 *value);
         s32 IIC_write_16bit(u8 reg,u16 value);
