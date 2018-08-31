@@ -1,6 +1,6 @@
 /*
  * basic_demo.ino
- * Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
+ * Example for Grove touch sensor CY8C401XX
  *  
  * Copyright (c) 2018 Seeed Technology Co., Ltd.
  * Website    : www.seeed.cc
@@ -31,10 +31,16 @@
 
 #include "Seeed_CY8C401XX.h"
 
+#ifdef ARDUINO_SAMD_VARIANT_COMPLIANCE
+  #define SERIAL SerialUSB
+#else
+  #define SERIAL Serial
+#endif
+
 CY8C sensor;
 void setup()
 {
-    Serial.begin(115200);
+    SERIAL.begin(115200);
     
     sensor.init();
 }
@@ -44,17 +50,17 @@ void loop()
 {
     u8 value=0;
     sensor.get_touch_button_value(&value);
-    Serial.print("button value is");
-    Serial.println(value,HEX);
+    SERIAL.print("button value is");
+    SERIAL.println(value,HEX);
     if(value&0x01)
-        Serial.println("button 1 is pressed");
+        SERIAL.println("button 1 is pressed");
     if(value&0x2)
-        Serial.println("button 2 is pressed");
+        SERIAL.println("button 2 is pressed");
 
     sensor.get_touch_slider_value(&value);
-    Serial.print("slider value is");
-    Serial.println(value,HEX);
-    Serial.println(" ");
+    SERIAL.print("slider value is");
+    SERIAL.println(value,HEX);
+    SERIAL.println(" ");
 
 
     delay(1000);
