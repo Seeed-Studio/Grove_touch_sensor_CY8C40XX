@@ -69,7 +69,7 @@ s32 CY8C::get_touch_slider_value(u8* value)
 /************************************************IIC PART************************************************/
 /**********************************************************************************************************/
 
-s32 IIC_OPRTS::IIC_write_byte(u8 reg,u8 byte)
+s32 CY8C_IIC_OPRTS::IIC_write_byte(u8 reg,u8 byte)
 {
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(reg);
@@ -78,7 +78,7 @@ s32 IIC_OPRTS::IIC_write_byte(u8 reg,u8 byte)
 }
 
 
-s32 IIC_OPRTS::IIC_write_16bit(u8 reg,u16 value)
+s32 CY8C_IIC_OPRTS::IIC_write_16bit(u8 reg,u16 value)
 {
     Wire.beginTransmission(_IIC_ADDR);
     Wire.write(reg);
@@ -91,7 +91,7 @@ s32 IIC_OPRTS::IIC_write_16bit(u8 reg,u16 value)
 
 
 
-s32 IIC_OPRTS::IIC_read_byte(u8 reg,u8* byte)
+s32 CY8C_IIC_OPRTS::IIC_read_byte(u8 reg,u8* byte)
 {
     u8 timeout_count=0;
     Wire.beginTransmission(_IIC_ADDR);
@@ -110,7 +110,7 @@ s32 IIC_OPRTS::IIC_read_byte(u8 reg,u8* byte)
     
 }
 
-void IIC_OPRTS::IIC_read_16bit(u8 start_reg,u16 *value)
+void CY8C_IIC_OPRTS::IIC_read_16bit(u8 start_reg,u16 *value)
 {
     u8 val=0;
     *value=0;
@@ -128,7 +128,7 @@ void IIC_OPRTS::IIC_read_16bit(u8 start_reg,u16 *value)
 
 
 
-void IIC_OPRTS::set_iic_addr(u8 IIC_ADDR)
+void CY8C_IIC_OPRTS::set_iic_addr(u8 IIC_ADDR)
 {
     _IIC_ADDR=IIC_ADDR;
 }
