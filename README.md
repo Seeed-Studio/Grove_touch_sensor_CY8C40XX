@@ -1,4 +1,4 @@
-Grove Touch sensor CY8C401XX
+Grove Touch sensor CY8C401XX  [![Build Status](https://travis-ci.com/Seeed-Studio/Grove_touch_sensor_CY8C40XX.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Grove_touch_sensor_CY8C40XX)
 =======================================
 
 Touch sensor,with two bottons and a touch slider.
